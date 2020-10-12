@@ -1,11 +1,16 @@
 <h1>Recipes</h1>
 
-    <% @recipes.each do |r| %>
-        <%= r.name %><br>
-    <% end %>
+    <% @recipes.each do |recipe| %>
+        <%= recipe %> - <%= recipe.name %><br><br>
+   <% end %>
+
+		<%= form_with url: "./ingredients" do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q, @ingredient) %>
+  <%= submit_tag("Search") %>
+
+<% end %>
 
     
 
 
-<%# look at all the recipies, find the recipe that matches self, then find
-the ingredients for said recipe (needs to look into RecipeIngredient to find though) %>
