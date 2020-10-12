@@ -1,0 +1,13 @@
+<h1>User/Recipes:</h1>
+
+<strong> <%= @user.name %> </strong><br>
+
+<% @user.recipes.each do |recipe| %>
+    <%= recipe.name  %><br>
+<% end %>
+
+
+
+
+<br><br>
+<%= button_to "FIRE CHEF! 😡", user_path(@user), method: :delete, style: "color:red"%>
